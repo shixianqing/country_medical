@@ -8,6 +8,7 @@
 import country_medical.dbtool as db
 from country_medical.util.fileUtil import writeFile
 import os
+import scrapy.log as log
 
 class CountryMedicalInsurancePipeline(object):
 
@@ -17,7 +18,7 @@ class CountryMedicalInsurancePipeline(object):
 
         info = item["info"]
         if info is None or len(info) == 0:
-            print("--------------------------采集数据为空，url写入文件，跳过插入数据库-----------------")
+            log("--------------------------采集数据为空，url写入文件，跳过插入数据库-----------------")
             writeFile(url=item["url"], fileName="E:\spilder\country_medical\country_medical\exception-file\exception.txt")
             return item
 
@@ -27,10 +28,10 @@ class CountryMedicalInsurancePipeline(object):
         try:
             self.pool.insert(sql, param=tuple(info))
             self.pool.end("commit")
-            print(item["url"]+"-----------插入成功")
+            log(item["url"]+"-----------插入成功")
         except BaseException as e:
-            print("{异常信息-----------》》{}".format(e))
-            print("数据插入失败！")
+            log("{异常信息-----------》》{}".format(e))
+            log("数据插入失败！")
             writeFile(url=item["url"], fileName="E:\spilder\country_medical\country_medical\exception-file\exception.txt")
         return item
 
