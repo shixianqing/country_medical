@@ -55,7 +55,7 @@ class CountryMedicalInsuranceSpiderMiddleware(object):
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
 
-
+import country_medical.util.fileUtil as fileUtil
 class CountryMedicalInsuranceDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
@@ -81,12 +81,12 @@ class CountryMedicalInsuranceDownloaderMiddleware(object):
         return None
 
     def process_response(self, request, response, spider):
-        # Called with the response returned from the downloader.
 
-        # Must either;
-        # - return a Response object
-        # - return a Request object
-        # - or raise IgnoreRequest
+        if response is not None and response.status is not None and response.status != 200:
+            print("响应有问题")
+            fileUtil.writeFile(response.url,"D:\workspace\country_medical\country_medical\exception-file\exception.txt")
+
+        print("进入自定义中间件中了")
         return response
 
     def process_exception(self, request, exception, spider):
@@ -97,6 +97,8 @@ class CountryMedicalInsuranceDownloaderMiddleware(object):
         # - return None: continue processing this exception
         # - return a Response object: stops process_exception() chain
         # - return a Request object: stops process_exception() chain
+        print("请求有问题")
+        fileUtil.writeFile(request.meta["splash"]["args"]["url"], "D:\workspace\country_medical\country_medical\exception-file\exception.txt")
         pass
 
     def spider_opened(self, spider):
