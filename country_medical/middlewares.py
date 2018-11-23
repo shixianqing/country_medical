@@ -83,7 +83,7 @@ class CountryMedicalInsuranceDownloaderMiddleware(object):
     def process_response(self, request, response, spider):
 
         if response is not None and response.status is not None and response.status != 200:
-            print("响应有问题")
+            spider.log(message="url------->>{}请求出问题".format(response.url))
             fileUtil.writeFile(response.url,"D:\workspace\country_medical\country_medical\exception-file\exception.txt")
 
         print("进入自定义中间件中了")
@@ -97,8 +97,9 @@ class CountryMedicalInsuranceDownloaderMiddleware(object):
         # - return None: continue processing this exception
         # - return a Response object: stops process_exception() chain
         # - return a Request object: stops process_exception() chain
-        print("请求有问题")
-        fileUtil.writeFile(request.meta["splash"]["args"]["url"], "D:\workspace\country_medical\country_medical\exception-file\exception.txt")
+        url = request.meta["splash"]["args"]["url"]
+        spider.log(message="url------->>{}响应异常".format(url))
+        fileUtil.writeFile(url, "D:\workspace\country_medical\country_medical\exception-file\exception.txt")
         pass
 
     def spider_opened(self, spider):

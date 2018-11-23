@@ -125,6 +125,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 # REDIS_HOST = "10.0.0.110"
 # REDIS_PORT = "6379"
+import datetime
 SPLASH_URL = 'http://192.168.99.100:8050/'
-LOG_LEVEL = "DEBUG"
-LOG_FILE = './out.log'
+LOG_LEVEL = 'DEBUG'
+time = datetime.datetime.now()
+LOG_FILE = '../log/scrapy_{}_{}_{}.log'.format(time.year, time.month, time.day)

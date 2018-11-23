@@ -1,1 +1,8 @@
-http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=39516
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=176298
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=48364
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=147707
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=49065
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=35263
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=41138
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=4787
+http://app1.sfda.gov.cn/datasearchcnda/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=36307
